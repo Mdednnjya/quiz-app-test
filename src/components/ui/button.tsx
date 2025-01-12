@@ -1,4 +1,3 @@
-// src/components/ui/Button.tsx
 import {LoadingSpinner} from "@/components/ui/loading-spinner";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
