@@ -16,8 +16,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Quiz App",
-  description: "App created for test purpose on DOT Indonesia",
+    title: "Quiz App",
+    description: "App created for test purpose on DOT Indonesia",
+    icons: {
+        icon: '/favicon.ico',
+    },
 };
 
 export default function RootLayout({

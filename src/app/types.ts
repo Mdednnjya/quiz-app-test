@@ -26,3 +26,26 @@ export interface QuizContextType {
     submitAnswer: (answer: string) => void;
     resumeQuiz: () => void;
 }
+
+export interface QuizWelcomeProps {
+    onStart: () => void;
+}
+
+export interface QuizResultsProps {
+    score: number;
+    incorrectAnswers: number;
+    unanswered: number;
+    onTryAgain: () => void;
+}
+
+export interface QuizQuestionProps {
+    currentQuestionIndex: number;
+    totalQuestions: number;
+    timeLeft: number;
+    question: {
+        category: string;
+        question: string;
+    };
+    shuffledAnswers: string[];
+    onAnswerSubmit: (answer: string) => void;
+}
