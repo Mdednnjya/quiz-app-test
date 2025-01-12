@@ -13,7 +13,7 @@ export const Navbar = () => {
     const handleLogout = async () => {
         try {
             await signOut(auth);
-            router.push('/login');
+            router.push('/auth/sign-in');
         } catch (error) {
             console.error('Error logging out:', error);
         }

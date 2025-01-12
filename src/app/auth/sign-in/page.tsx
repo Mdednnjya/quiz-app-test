@@ -24,7 +24,7 @@ export default function LoginPage() {
 
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            router.push('/quiz');
+            router.push('/');
         } catch (err) {
             setError('Invalid email or password');
         } finally {

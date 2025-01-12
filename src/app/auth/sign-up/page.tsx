@@ -32,7 +32,7 @@ export default function RegisterPage() {
 
         try {
             await createUserWithEmailAndPassword(auth, email, password);
-            router.push('/quiz');
+            router.push('/');
         } catch (err: any) {
             setError(err.message);
         } finally {
