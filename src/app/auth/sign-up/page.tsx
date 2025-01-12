@@ -8,6 +8,7 @@ import { AuthCard } from "@/components/auth/auth-card";
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import { EyeIcon, EyeOffIcon } from 'lucide-react';
+import {FirebaseError} from "@firebase/app";
 
 export default function RegisterPage() {
     const [email, setEmail] = useState('');
@@ -33,8 +34,12 @@ export default function RegisterPage() {
         try {
             await createUserWithEmailAndPassword(auth, email, password);
             router.push('/');
-        } catch (err: any) {
-            setError(err.message);
+        } catch (err: unknown) {
+            if (err instanceof FirebaseError) {
+                setError(err.message);
+            } else {
+                setError('An unexpected error occurred');
+            }
         } finally {
             setLoading(false);
         }
